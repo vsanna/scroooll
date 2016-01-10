@@ -1,7 +1,7 @@
 # readme
 ## how to use
 
-scroooll.js is a simple JavaScript library to create button to scroll up easily.
+scroooll.js is a simple JavaScript library to create button to scroll up easily.([DEMO](http://vsanna.github.io/scroooll))  
 **CARE! scroooll.js needs jquery**
 
 ```javascript
