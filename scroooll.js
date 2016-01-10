@@ -1,10 +1,10 @@
 (function($){
-  $.scroool = function(){
+  $.scroooll = function(){
 
     this.defaults = {
       selector: '',
       className: 'toTop',
-      message: '上へ戻る',
+      message: 'up to top',
       duration: 1000,
       top: 100,
     }
@@ -22,13 +22,13 @@
       var options = arguments.splice(1,1)
       this[method](options)
     } else {
-      console.log('引数は [methodName:String, options:Object] です。')
+      console.log('arguments are  [methodName:String, options:Object] ')
       return
     }
 
   }
 
-  $.scroool.prototype = {
+  $.scroooll.prototype = {
     init: function(options){
       this.settings = $.extend({}, this.defaults, options)
       this.createButton()
@@ -43,9 +43,12 @@
       }
 
       button.addClass(this.settings.className)
+      button.hide()
+      
       button.click(function(){
         $('body, html').animate({ scrollTop: 0 }, self.settings.duration)
       })
+
 
       var self = this
       $(window).scroll(function () {
@@ -59,15 +62,3 @@
     },
   }
 })(jQuery)
-
-/*
-呼び出し方
-$.scroool(); // init
-$.scroool({
-  selector: 'span.upto',
-  className: 'target',
-  message: '上へ戻る',
-  duration: 1000,
-  top: 100,
-}); // optionつきinit
-*/
